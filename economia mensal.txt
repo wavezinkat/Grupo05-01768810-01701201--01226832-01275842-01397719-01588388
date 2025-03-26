@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/light_gray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Economia Mensal"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seu Orçamento está sob controle"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dias restantes: 10 dias"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Você poupou R$4.850,00 em Janeiro até agora."
+            android:textSize="12sp"
+            android:textColor="@color/green" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Junho"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Limite\nR$8.000,00"
+                android:gravity="center"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Gastos\nR$3.600,00"
+                android:textColor="@color/red"
+                android:gravity="center"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Restante\nR$4.400,00"
+                android:textColor="@color/green"
+                android:gravity="center"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@color/white"
+            android:elevation="4dp">
+
+            <TableRow>
+                <TextView android:text="CATEGORIA" android:textStyle="bold" />
+                <TextView android:text="DATA" android:textStyle="bold" />
+                <TextView android:text="VALOR" android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+                <TextView android:text="INTERNET" />
+                <TextView android:text="03/06/2025" />
+                <TextView android:text="70,00" />
+            </TableRow>
+            <TableRow>
+                <TextView android:text="ACADEMIA" />
+                <TextView android:text="05/06/2025" />
+                <TextView android:text="100,00" />
+            </TableRow>
+            <TableRow>
+                <TextView android:text="ALUGUEL" />
+                <TextView android:text="07/06/2025" />
+                <TextView android:text="450,00" />
+            </TableRow>
+            <TableRow>
+                <TextView android:text="ALIMENTAÇÃO" />
+                <TextView android:text="10/06/2025" />
+                <TextView android:text="374,00" />
+            </TableRow>
+            <TableRow>
+                <TextView android:text="COMBUSTÍVEL" />
+                <TextView android:text="10/06/2025" />
+                <TextView android:text="50,00" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>
