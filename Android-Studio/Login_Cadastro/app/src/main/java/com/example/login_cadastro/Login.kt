@@ -26,7 +26,7 @@ class Login : AppCompatActivity() {
             startActivity(intent)
         }
         binding.loginButton.setOnClickListener{
-            var intent = Intent(this, Home::class.java)
+            var intent = Intent(this, Username::class.java)
             startActivity(intent)
         }
         /*enableEdgeToEdge()

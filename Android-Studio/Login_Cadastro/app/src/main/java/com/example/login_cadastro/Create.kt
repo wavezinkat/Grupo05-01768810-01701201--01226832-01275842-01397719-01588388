@@ -6,23 +6,23 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.login_cadastro.databinding.ActivityCadastroBinding
+import com.example.login_cadastro.databinding.ActivityCreateBinding
 
-class Cadastro : AppCompatActivity() {
-    private lateinit var binding: ActivityCadastroBinding
+
+class Create : AppCompatActivity() {
+    private lateinit var binding: ActivityCreateBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityCadastroBinding.inflate(layoutInflater)
+        binding = ActivityCreateBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.returnButton.setOnClickListener{
-            var intent = Intent(this, Login::class.java)
-            startActivity(intent)
-        }
-
-        binding.registerButton.setOnClickListener{
             var intent = Intent(this, Username::class.java)
             startActivity(intent)
         }
+        binding.createButton.setOnClickListener{
+            var intent = Intent(this, Username::class.java)
+            startActivity(intent)
+        }
+        }
     }
-}
