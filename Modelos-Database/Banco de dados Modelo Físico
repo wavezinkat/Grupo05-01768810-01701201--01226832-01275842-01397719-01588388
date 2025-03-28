@@ -1,0 +1,41 @@
+CREATE TABLE Usuario 
+( 
+    ID_Usuario INT PRIMARY KEY,  
+    Data_Nascimento DATE,  
+    Senha VARCHAR(255),  
+    Email VARCHAR(255),  
+    Nome VARCHAR(100)  
+);
+
+CREATE TABLE Carteira 
+( 
+    ID_Carteira INT PRIMARY KEY,  
+    Renda FLOAT,  
+    Tipo_de_Renda CHAR(50),  
+    Saldo FLOAT,  
+    ID_Usuario INT,  
+    FOREIGN KEY (ID_Usuario) REFERENCES Usuario(ID_Usuario)  
+);
+
+CREATE TABLE Gastos 
+( 
+    ID_Gastos INT PRIMARY KEY,  
+    Total FLOAT,  
+    ID_Carteira INT,  
+    FOREIGN KEY (ID_Carteira) REFERENCES Carteira(ID_Carteira)  
+);
+
+CREATE TABLE Despesa 
+( 
+    ID_Despesa INT PRIMARY KEY,  
+    Data DATE,  
+    Categoria VARCHAR(100),  
+    Tipo_Despesa VARCHAR(100),  
+    Valor FLOAT,  
+    ID_Gastos INT,  
+    FOREIGN KEY (ID_Gastos) REFERENCES Gastos(ID_Gastos)  
+);
+
+
+--------------------------------------------------------------------------------------------
+
