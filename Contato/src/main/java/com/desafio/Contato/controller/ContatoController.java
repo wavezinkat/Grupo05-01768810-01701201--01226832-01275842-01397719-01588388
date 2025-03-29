@@ -1,8 +1,10 @@
 package com.desafio.Contato.controller;
 
+import com.desafio.Contato.Contato.dto.ContatoDTO;
 import com.desafio.Contato.model.Contato;
 import com.desafio.Contato.service.ContatoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -49,4 +51,11 @@ public class ContatoController {
     public Map<Character, List<Contato>> listarPorLetra(){
         return contatoService.listarPorLetra();
     }
+
+    @PostMapping
+        public ResponseEntity<String> criarContato(@RequestBody @Valid ContatoDTO contatoDTO) {
+            // Aqui você pode chamar o serviço para salvar o contato
+            return ResponseEntity.ok("Contato criado com sucesso!");
+        }
+
 }
