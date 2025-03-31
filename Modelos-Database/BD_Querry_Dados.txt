@@ -1,0 +1,250 @@
+--------------- CRIANDO BANCO DE DADOS APP FINANCE ------------------
+
+CREATE TABLE Usuario 
+( 
+    ID_Usuario INT PRIMARY KEY,  
+    Data_Nascimento DATE,  
+    Senha VARCHAR(255),  
+    Email VARCHAR(255),  
+    Nome VARCHAR(100)  
+);
+
+CREATE TABLE Carteira 
+( 
+    ID_Carteira INT PRIMARY KEY,  
+    Renda FLOAT,  
+    Tipo_de_Renda CHAR(50),  
+    Saldo FLOAT,  
+    ID_Usuario INT,  
+    FOREIGN KEY (ID_Usuario) REFERENCES Usuario(ID_Usuario)  
+);
+
+CREATE TABLE Gastos 
+( 
+    ID_Gastos INT PRIMARY KEY,  
+    Total FLOAT,  
+    ID_Carteira INT,  
+    FOREIGN KEY (ID_Carteira) REFERENCES Carteira(ID_Carteira)  
+);
+
+CREATE TABLE Despesa 
+( 
+    ID_Despesa INT PRIMARY KEY,  
+    Data DATE,  
+    Categoria VARCHAR(100),  
+    Tipo_Despesa VARCHAR(100),  
+    Valor FLOAT,  
+    ID_Gastos INT,  
+    FOREIGN KEY (ID_Gastos) REFERENCES Gastos(ID_Gastos)  
+);
+
+
+
+--------------- DADOS TABELA USUARIO ------------------
+
+INSERT INTO Usuario (id_usuario, Data_Nascimento, Senha, Email, Nome) VALUES ('1', '2003-03-14', '1111', 'usuario1@gmail.com', 'Matheus Costa Santos');
+INSERT INTO Usuario (id_usuario, Data_Nascimento, Senha, Email, Nome) VALUES ('2', '1995-05-22', '2222', 'usuario2@gmail.com', 'Lucas Oliveira Souza');
+INSERT INTO Usuario (id_usuario, Data_Nascimento, Senha, Email, Nome) VALUES ('3', '1988-12-30', '3333', 'usuario3@gmail.com', 'Maria Eduarda Almeida Barbosa');
+INSERT INTO Usuario (id_usuario, Data_Nascimento, Senha, Email, Nome) VALUES ('4', '2000-07-15', '4444', 'usuario4@gmail.com', 'Laura Ribeiro Mendes');
+INSERT INTO Usuario (id_usuario, Data_Nascimento, Senha, Email, Nome) VALUES ('5', '1992-11-05', '5555', 'usuario5@gmail.com', 'Davi Carvalho Rocha');
+INSERT INTO Usuario (id_usuario, Data_Nascimento, Senha, Email, Nome) VALUES ('6', '1985-01-20', '6666', 'usuario6@gmail.com', 'João Pedro Silva');
+INSERT INTO Usuario (id_usuario, Data_Nascimento, Senha, Email, Nome) VALUES ('7', '1999-09-09', '7777', 'usuario7@gmail.com', 'Ana Clara Gomes Castro');
+INSERT INTO Usuario (id_usuario, Data_Nascimento, Senha, Email, Nome) VALUES ('8', '2001-04-18', '8888', 'usuario8@gmail.com', 'Isabella Sousa Nunes');
+INSERT INTO Usuario (id_usuario, Data_Nascimento, Senha, Email, Nome) VALUES ('9', '1990-06-25', '9999', 'usuario9@gmail.com', 'Gabriel Rodrigues Pereira');
+INSERT INTO Usuario (id_usuario, Data_Nascimento, Senha, Email, Nome) VALUES ('10', '2007-10-10', '0000', 'usuario10@gmail.com', 'Enzo Fernandes Lima');
+
+
+--------------- DADOS TABELA CARTEIRA ------------------
+
+INSERT INTO Carteira (ID_Carteira, Renda, Tipo_de_Renda, Saldo, ID_Usuario) VALUES ('1', '7812', 'variavel', '7812', '1');
+INSERT INTO Carteira (ID_Carteira, Renda, Tipo_de_Renda, Saldo, ID_Usuario) VALUES ('2', '5000', 'fixo', '3285', '2');
+INSERT INTO Carteira (ID_Carteira, Renda, Tipo_de_Renda, Saldo, ID_Usuario) VALUES ('3', '3500', 'variavel', '7128', '3');
+INSERT INTO Carteira (ID_Carteira, Renda, Tipo_de_Renda, Saldo, ID_Usuario) VALUES ('4', '2000', 'fixo', '5190', '4');
+INSERT INTO Carteira (ID_Carteira, Renda, Tipo_de_Renda, Saldo, ID_Usuario) VALUES ('5', '7300', 'variavel', '87230', '5');
+INSERT INTO Carteira (ID_Carteira, Renda, Tipo_de_Renda, Saldo, ID_Usuario) VALUES ('6', '4000', 'fixo', '19871', '6');
+INSERT INTO Carteira (ID_Carteira, Renda, Tipo_de_Renda, Saldo, ID_Usuario) VALUES ('7', '4200', 'variavel', '47123', '7');
+INSERT INTO Carteira (ID_Carteira, Renda, Tipo_de_Renda, Saldo, ID_Usuario) VALUES ('8', '9500', 'fixo', '38734', '8');
+INSERT INTO Carteira (ID_Carteira, Renda, Tipo_de_Renda, Saldo, ID_Usuario) VALUES ('9', '7300', 'variavel', '6861', '9');
+INSERT INTO Carteira (ID_Carteira, Renda, Tipo_de_Renda, Saldo, ID_Usuario) VALUES ('10', '6000', 'fixo', '9173', '10');
+
+
+--------------- DADOS TABELA GASTOS ------------------
+
+INSERT INTO Gastos (ID_Gastos, Total, ID_Carteira) VALUES ('1', '7812', '1');
+INSERT INTO Gastos (ID_Gastos, Total, ID_Carteira) VALUES ('2', '4500', '2');
+INSERT INTO Gastos (ID_Gastos, Total, ID_Carteira) VALUES ('3', '3200', '3');
+INSERT INTO Gastos (ID_Gastos, Total, ID_Carteira) VALUES ('4', '1500', '4');
+INSERT INTO Gastos (ID_Gastos, Total, ID_Carteira) VALUES ('5', '6000', '5');
+INSERT INTO Gastos (ID_Gastos, Total, ID_Carteira) VALUES ('6', '2500', '6');
+INSERT INTO Gastos (ID_Gastos, Total, ID_Carteira) VALUES ('7', '3700', '7');
+INSERT INTO Gastos (ID_Gastos, Total, ID_Carteira) VALUES ('8', '8900', '8');
+INSERT INTO Gastos (ID_Gastos, Total, ID_Carteira) VALUES ('9', '4300', '9');
+INSERT INTO Gastos (ID_Gastos, Total, ID_Carteira) VALUES ('10', '5200', '10');
+
+
+---------------- DADOS TABELA DESPESA ------------------
+
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('1', '2025-03-03', 'aluguel', 'fixo', '600', '1');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('2', '2025-03-05', 'academia', 'fixo', '110', '1');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('3', '2025-03-07', 'alimentação', 'variavel', '80', '1');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('4', '2025-03-10', 'combustível', 'variavel', '70', '1');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('5', '2025-03-13', 'cinema', 'variavel', '64', '1');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('6', '2025-03-13', 'faculdade', 'fixo', '450', '1');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('7', '2025-03-15', 'combustível', 'variavel', '50', '1');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('8', '2025-03-15', 'alimentação', 'variavel', '120', '1');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('9', '2025-03-23', 'lazer', 'variavel', '85', '1');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('10', '2025-03-28', 'jogo futebol', 'variavel', '48', '1');
+
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('11', '2025-03-01', 'internet', 'fixo', '100', '2');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('12', '2025-03-02', 'transporte', 'variavel', '45', '2');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('13', '2025-03-04', 'roupas', 'variavel', '200', '2');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('14', '2025-03-06', 'saúde', 'variavel', '150', '2');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('15', '2025-03-08', 'viagem', 'variavel', '300', '2');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('16', '2025-03-12', 'livros', 'variavel', '75', '2');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('17', '2025-03-18', 'eletrônicos', 'variavel', '250', '2');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('18', '2025-03-20', 'cursos', 'fixo', '200', '2');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('19', '2025-03-22', 'presentes', 'variavel', '90', '2');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('20', '2025-03-30', 'manutenção', 'variavel', '120', '2');
+
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('21', '2025-03-03', 'assinatura streaming', 'fixo', '50', '3');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('22', '2025-03-05', 'alimentação', 'variavel', '120', '3');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('23', '2025-03-07', 'cabeleireiro', 'variavel', '80', '3');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('24', '2025-03-09', 'material escolar', 'variavel', '60', '3');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('25', '2025-03-11', 'hobbies', 'variavel', '150', '3');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('26', '2025-03-13', 'serviços domésticos', 'fixo', '200', '3');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('27', '2025-03-15', 'farmácia', 'variavel', '45', '3');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('28', '2025-03-17', 'eventos', 'variavel', '300', '3');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('29', '2025-03-19', 'cuidado pessoal', 'variavel', '70', '3');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('30', '2025-03-29', 'jantar especial', 'variavel', '150', '3');
+
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('31', '2025-03-02', 'plano de saúde', 'fixo', '120', '4');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('32', '2025-03-04', 'supermercado', 'variavel', '200', '4');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('33', '2025-03-06', 'estética', 'variavel', '90', '4');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('34', '2025-03-08', 'material de escritório', 'variavel', '75', '4');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('35', '2025-03-10', 'atividades recreativas', 'variavel', '180', '4');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('36', '2025-03-12', 'limpeza', 'fixo', '250', '4');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('37', '2025-03-14', 'medicamentos', 'variavel', '60', '4');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('38', '2025-03-16', 'shows', 'variavel', '350', '4');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('39', '2025-03-18', 'cuidado com animais', 'variavel', '80', '4');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('40', '2025-03-28', 'jantar fora', 'variavel', '200', '4');
+
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('41', '2025-03-03', 'academia', 'fixo', '150', '5');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('42', '2025-03-05', 'livraria', 'variavel', '220', '5');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('43', '2025-03-07', 'salão de beleza', 'variavel', '120', '5');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('44', '2025-03-09', 'material de construção', 'variavel', '95', '5');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('45', '2025-03-11', 'lazer', 'variavel', '200', '5');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('46', '2025-03-13', 'cuidado com animais', 'fixo', '260', '5');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('47', '2025-03-15', 'medicamentos', 'variavel', '70', '5');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('48', '2025-03-17', 'ingressos', 'variavel', '370', '5');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('49', '2025-03-19', 'higiene', 'variavel', '90', '5');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('50', '2025-03-29', 'restaurante', 'variavel', '210', '5');
+
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('51', '2025-03-03', 'plano odontológico', 'fixo', '130', '6');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('52', '2025-03-05', 'supermercado', 'variavel', '210', '6');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('53', '2025-03-07', 'beleza e estética', 'variavel', '100', '6');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('54', '2025-03-09', 'material escolar', 'variavel', '85', '6');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('55', '2025-03-11', 'entretenimento', 'variavel', '190', '6');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('56', '2025-03-13', 'serviços domésticos', 'fixo', '270', '6');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('57', '2025-03-15', 'medicamentos', 'variavel', '70', '6');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('58', '2025-03-17', 'eventos culturais', 'variavel', '360', '6');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('59', '2025-03-19', 'cuidados com pets', 'variavel', '90', '6');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('60', '2025-03-29', 'alimentação fora de casa', 'variavel', '220', '6');
+
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('61', '2025-03-03', 'Seguro de carro', 'fixo', '150', '7');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('62', '2025-03-05', 'Compras online', 'variavel', '250', '7');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('63', '2025-03-07', 'Salão de beleza', 'variavel', '120', '7');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('64', '2025-03-09', 'Livros', 'variavel', '95', '7');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('65', '2025-03-11', 'Cinema', 'variavel', '210', '7');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('66', '2025-03-13', 'Condomínio', 'fixo', '800', '7');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('67', '2025-03-15', 'Remédios', 'variavel', '80', '7');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('68', '2025-03-17', 'Show musical', 'variavel', '400', '7');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('69', '2025-03-19', 'Ração para pets', 'variavel', '100', '7');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('70', '2025-03-29', 'Restaurante', 'variavel', '240', '7');
+
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('71', '2025-04-01', 'Manutenção do carro', 'variavel', '200', '8');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('72', '2025-04-03', 'Roupas', 'variavel', '300', '8');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('73', '2025-04-05', 'Cursos online', 'variavel', '150', '8');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('74', '2025-04-07', 'Revistas', 'variavel', '110', '8');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('75', '2025-04-09', 'Teatro', 'variavel', '250', '8');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('76', '2025-04-11', 'Aluguel', 'fixo', '650', '8');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('77', '2025-04-13', 'Vitaminas', 'variavel', '90', '8');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('78', '2025-04-15', 'Exposição de arte', 'variavel', '450', '8');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('79', '2025-04-17', 'Brinquedos para pets', 'variavel', '120', '8');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('80', '2025-04-27', 'Lanchonete', 'variavel', '260', '8');
+
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('81', '2025-05-01', 'Seguro de vida', 'fixo', '180', '9');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('82', '2025-05-03', 'Eletrônicos', 'variavel', '350', '9');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('83', '2025-05-05', 'Academia', 'fixo', '110', '9');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('84', '2025-05-07', 'Assinatura de revistas', 'variavel', '120', '9');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('85', '2025-05-09', 'Parque de diversões', 'variavel', '280', '9');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('86', '2025-05-11', 'Financiamento do carro', 'fixo', '400', '9');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('87', '2025-05-13', 'Suplementos', 'variavel', '100', '9');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('88', '2025-05-15', 'Museu', 'variavel', '500', '9');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('89', '2025-05-17', 'Acessórios para pets', 'variavel', '140', '9');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('90', '2025-05-27', 'Cafeteria', 'variavel', '280', '9');
+
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('91', '2025-06-02', 'Seguro residencial', 'fixo', '200', '10');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('92', '2025-06-04', 'Móveis', 'variavel', '400', '10');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('93', '2025-06-06', 'Aulas de dança', 'variavel', '200', '10');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('94', '2025-06-08', 'Jornais', 'variavel', '130', '10');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('95', '2025-06-10', 'Peça de teatro', 'variavel', '300', '10');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('96', '2025-06-12', 'Mensalidade escolar', 'fixo', '450', '10');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('97', '2025-06-14', 'Produtos naturais', 'variavel', '110', '10');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('98', '2025-06-16', 'Concerto', 'variavel', '550', '10');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('99', '2025-06-18', 'Roupas', 'variavel', '150', '10');
+INSERT INTO Despesa (ID_Despesa, Data, Categoria, Tipo_Despesa, Valor, ID_Gastos) VALUES ('100', '2025-06-28', 'Super Mercado', 'variavel', '300', '10');
+
+
+
+-------------- QUERRYS SQL ---------------
+
+SELECT * FROM Usuário
+SELECT * FROM Carteira
+SELECT * FROM Despesa
+SELECT * FROM Gastos
+
+SELECT ID_Usuario, Nome, Data_Nascimento
+FROM Usuario
+WHERE Data_Nascimento > '2000-01-01'
+ORDER BY Data_Nascimento
+
+SELECT ID_Despesa, Categoria, Tipo_Despesa, Valor
+FROM Despesa
+WHERE Valor > 150
+
+SELECT ID_Carteira, Renda, Tipo_de_Renda, ID_Usuario
+FROM Carteira
+WHERE Renda >= 4000 AND Renda <= 7000
+
+SELECT ID_Carteira, Renda, Tipo_de_Renda, ID_Usuario
+FROM Carteira
+WHERE Renda >= 5000
+
+SELECT ID_Despesa, Categoria, Valor
+FROM Despesa
+WHERE Tipo_Despesa = 'variavel'
+
+SELECT ID_Despesa, Categoria, Valor
+FROM Despesa
+WHERE Tipo_Despesa = 'variavel' AND valor > 200
+
+SELECT ID_Despesa, Categoria, Valor
+FROM Despesa
+WHERE Tipo_Despesa = 'fixo'
+ORDER BY Valor
+
+SELECT ID_Despesa, Data, Valor
+FROM Despesa
+WHERE Tipo_Despesa = 'Variavel' and Valor BETWEEN 150 AND 250
+ORDER BY Data
+
+SELECT id_gastos AS [ID_Usuario], SUM(Valor) AS [Quantidade_Total_Gastos_Variavel]
+FROM Despesa
+WHERE Tipo_Despesa = 'Variavel'
+GROUP BY id_gastos
+
+SELECT ID_Despesa, Categoria, Valor
+FROM Despesa
+WHERE Categoria = 'lazer' OR Categoria = 'eventos' OR Categoria = 'hobbies' OR Categoria = 'shows'
+ORDER by categoria
+
