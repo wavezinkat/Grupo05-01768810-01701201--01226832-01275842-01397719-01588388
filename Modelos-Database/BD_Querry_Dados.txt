@@ -206,7 +206,7 @@ SELECT * FROM Gastos
 SELECT ID_Usuario, Nome, Data_Nascimento
 FROM Usuario
 WHERE Data_Nascimento > '2000-01-01'
-ORDER BY Data_Nascimento
+ORDER BY Data_Nascimento ASC
 
 SELECT ID_Despesa, Categoria, Tipo_Despesa, Valor
 FROM Despesa
@@ -231,12 +231,12 @@ WHERE Tipo_Despesa = 'variavel' AND valor > 200
 SELECT ID_Despesa, Categoria, Valor
 FROM Despesa
 WHERE Tipo_Despesa = 'fixo'
-ORDER BY Valor
+ORDER BY Valor ASC
 
 SELECT ID_Despesa, Data, Valor
 FROM Despesa
 WHERE Tipo_Despesa = 'Variavel' and Valor BETWEEN 150 AND 250
-ORDER BY Data
+ORDER BY Data ASC
 
 SELECT id_gastos AS [ID_Usuario], SUM(Valor) AS [Quantidade_Total_Gastos_Variavel]
 FROM Despesa
