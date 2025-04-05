@@ -248,3 +248,10 @@ FROM Despesa
 WHERE Categoria = 'lazer' OR Categoria = 'eventos' OR Categoria = 'hobbies' OR Categoria = 'shows'
 ORDER by categoria
 
+SELECT Data, Categoria, Tipo_Despesa, Valor FROM Despesa
+WHERE Data BETWEEN '2025-01-01' AND '2025-03-31'
+ORDER BY Data ASC;
+
+SELECT AVG(Renda) AS Renda_Media
+FROM Carteira;
+
