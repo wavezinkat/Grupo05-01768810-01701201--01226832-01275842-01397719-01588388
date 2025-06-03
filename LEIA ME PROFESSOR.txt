@@ -3,3 +3,5 @@ android studio = projetos relacionados á disciplina de mobile
 caixa = caixa eletronico em kotlin
 contato = lista de contatos em java spring
 modelos-database = projetos relacionados á disciplina de banco de dados
+app finance = front end do projeto, da disciplina de mobile
+financas = back end do projeto, da disciplina de backend frameworks
