@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IncluirGastoVariado">
+
+    <!--
+    <DatePicker
+        android:id="@+id/datepicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+-->
+    <ImageView
+        android:id="@+id/icone_return"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_return"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="Incluir Gasto"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </TextView>
+
+    <Button
+        android:id="@+id/variado_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/lightblue"
+        android:text="Despesa Variada"
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter_bold"
+        android:textSize="12dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/titulo2"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+    </Button>
+
+    <Button
+        android:id="@+id/fixo_button"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/white"
+        android:text="Despesa Fixa"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_bold"
+        android:textSize="12dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/titulo2"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints">
+    </Button>
+
+    <TextView
+        android:id="@+id/titulo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Tipo de Despesa"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </TextView>
+
+    <Button
+        android:id="@+id/incluir_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/lightblue"
+        android:text="Incluir"
+        android:textSize="18dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter_bold"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/linear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+    </Button>
+
+    <TextView
+        android:id="@+id/categoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Categoria"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/fixo_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </TextView>
+
+    <EditText
+        android:id="@+id/campo_categoria"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:hint="Ex: Aluguel, Combustível, etc."
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/categoria"
+        android:background="@color/white"
+        android:elevation="5dp"/>
+
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Data"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/campo_categoria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </TextView>
+
+    <EditText
+        android:id="@+id/campo_data"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:hint="___/___/___"
+        android:gravity="center"
+        android:focusable="false"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/data"
+        android:background="@color/white"
+        android:elevation="5dp" />
+
+    <TextView
+        android:id="@+id/valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Valor"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/campo_data"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </TextView>
+
+    <EditText
+        android:id="@+id/campo_valor"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:hint="R$ 0,00"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/valor"
+        android:background="@color/white"
+        android:elevation="5dp"/>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/icone_home"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_home"/>
+
+        <ImageView
+            android:id="@+id/icone_economia"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_economia"/>
+
+        <ImageView
+            android:id="@+id/icone_plus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_plus2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+        <ImageView
+            android:id="@+id/icone_geral"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_geral"
+            android:layout_marginRight="20dp"/>
+
+        <ImageView
+            android:id="@+id/icone_perfil"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_perfil"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

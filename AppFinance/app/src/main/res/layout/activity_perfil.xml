@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey1"
+    tools:context=".Perfil">
+
+
+    <TextView
+        android:id="@+id/fotoperfil"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:drawableTop="@drawable/foto"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/gradient">
+    </TextView>
+
+    <TextView
+        android:id="@+id/nomeperfil"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:text="Robert de Niro"
+        android:textSize="20dp"
+        android:gravity="bottom|center_horizontal"
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter_bold"
+        app:layout_constraintTop_toBottomOf="@+id/fotoperfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/gradient2">
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/layout_saldo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/nomeperfil"
+        app:layout_constraintStart_toStartOf="@id/nomeperfil"
+        app:layout_constraintEnd_toEndOf="@id/nomeperfil"
+        android:layout_marginTop="0dp">
+
+        <LinearLayout
+            android:id="@+id/saldo_conta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/saldo_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saldo da Conta: "
+                android:fontFamily="@font/inter_bold"
+                android:textSize="16dp"
+                android:textColor="@color/black"></TextView>
+
+            <TextView
+                android:id="@+id/valor_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$ 17.532,48"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/green"
+                android:textSize="16dp"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/texto_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email: "
+                android:fontFamily="@font/inter_bold"
+                android:textSize="16dp"
+                android:textColor="@color/black"></TextView>
+
+            <TextView
+                android:id="@+id/valor_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="robertdeniro@gmail.com"
+                android:fontFamily="@font/inter_bold"
+                android:textSize="16dp"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_senha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/texto_senha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Senha: "
+                android:fontFamily="@font/inter_bold"
+                android:textSize="16dp"
+                android:textColor="@color/black"></TextView>
+
+            <TextView
+                android:id="@+id/valor_senha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*************"
+                android:fontFamily="@font/inter_bold"
+                android:textSize="16dp"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/icone_return"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_return"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="Perfil"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </TextView>
+
+    <Button
+        android:id="@+id/editar"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/white"
+        android:text="Editar"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_bold"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/linear"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+    </Button>
+
+    <Button
+        android:id="@+id/voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/white"
+        android:text="Voltar"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_bold"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/linear"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints">
+    </Button>
+
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/icone_home"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_home"/>
+
+        <ImageView
+            android:id="@+id/icone_economia"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_economia"/>
+
+        <ImageView
+            android:id="@+id/icone_plus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_plus2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+        <ImageView
+            android:id="@+id/icone_geral"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_geral"
+            android:layout_marginRight="20dp"/>
+
+        <ImageView
+            android:id="@+id/icone_perfil"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_perfil2"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

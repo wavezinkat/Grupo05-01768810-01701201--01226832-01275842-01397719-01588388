@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home"
+    android:backgroundTint="@color/grey1"
+    android:background="@color/grey1">
+
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Olá, Usuário"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    </TextView>
+
+    <TextView
+        android:id="@+id/texto"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Seu orçamento está sob controle\nDias restantes 10 dias"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/detalhes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </TextView>
+
+    <Button
+        android:id="@+id/detalhes"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/lightblue"
+        android:text="Ver mais detalhes"
+        android:textSize="18dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter_bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/layout_saldo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+    </Button>
+
+
+    <LinearLayout
+        android:id="@+id/barra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/icone_home"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_home2"/>
+
+        <ImageView
+            android:id="@+id/icone_economia"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_economia"/>
+
+        <ImageView
+            android:id="@+id/icone_plus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_plus2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+        <ImageView
+            android:id="@+id/icone_geral"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_geral"
+            android:layout_marginRight="20dp"/>
+
+        <ImageView
+            android:id="@+id/icone_perfil"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_perfil"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:text="45%"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/grey1"
+            android:textSize="36dp"
+            android:gravity="center"
+            android:background="@drawable/circle"
+            android:layout_marginRight="20dp"
+            android:layout_centerHorizontal="true">
+        </EditText>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/gasto_atual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gastos Mês Atual"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/black"
+                android:textSize="14dp"></TextView>
+            <TextView
+                android:id="@+id/gasto_valor"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:text="R$ 3.600,00"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"></TextView>
+
+            <TextView
+                android:id="@+id/saldo_limite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saldo Limite"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/black"
+                android:textSize="14dp"></TextView>
+            <TextView
+                android:id="@+id/valor_limite"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:text="R$ 8.000,00"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:elevation="5dp"
+                android:gravity="center"></TextView>
+        </LinearLayout>
+</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_saldo"
+        android:layout_width="140dp"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/info"
+        app:layout_constraintStart_toStartOf="@id/info"
+        app:layout_constraintEnd_toEndOf="@id/info"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/saldo_conta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo em Conta"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/black"
+            android:textSize="14dp"></TextView>
+        <TextView
+            android:id="@+id/saldo_valor"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:text="R$ 17.352,48"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"></TextView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
